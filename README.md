@@ -17,3 +17,5 @@
 В map.js удаляем objectManager.clusters.options.set('preset', 'islands#greenClusterIcons') за ненадобностью.
 Также в ObjectManager-е сделал PieChart-ы чуть красивее.
 Удаляем весь popup.js, т.к функция getPopupContent() в popup.js нигде не импортируются в отличие от getDetailsContentLayout() в details.js.
+
+5) При нажатии на значек станции, карта зависает с ошибкой: "Cannot read property 'setPosition' of null". Чтобы понять на какой строке все падает, расставляем console.log()-и в //details map.js и details.js. Проблема со стрелочными функциями build: () => {...} и clear: () => {...} в details.js. Переписываем их build: function build() {...} и clear: function clear() {...}. Теперь попап с информацией о станции появляется, но без графика нагрузки.

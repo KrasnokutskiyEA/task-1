@@ -27,7 +27,7 @@ export default function getDetailsContentLayout(ymaps) {
         {% endif %}
     `,
     {
-      build: () => {
+      build: function build() {
         BalloonContentLayout.superclass.build.call(this)
 
         const { details } = this.getData().object.properties
@@ -43,7 +43,7 @@ export default function getDetailsContentLayout(ymaps) {
         }
       },
 
-      clear: () => {
+      clear: function clear() {
         if (this.connectionChart) {
           this.connectionChart.destroy()
         }
