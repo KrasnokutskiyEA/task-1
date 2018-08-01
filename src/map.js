@@ -21,10 +21,6 @@ export default function initMap(ymaps, containerId) {
 
   objectManager.clusters.options.set('preset', 'islands#greenClusterIcons')
 
-  loadList().then((data) => {
-    objectManager.add(data)
-  })
-
   // details
   objectManager.objects.events.add('click', (event) => {
     const objectId = event.get('objectId')
@@ -38,6 +34,12 @@ export default function initMap(ymaps, containerId) {
         objectManager.objects.balloon.setData(obj)
       })
     }
+  })
+
+  myMap.geoObjects.add(objectManager)
+
+  loadList().then((data) => {
+    objectManager.add(data)
   })
 
   // filters
