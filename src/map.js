@@ -13,13 +13,21 @@ export default function initMap(ymaps, containerId) {
     clusterize: true,
     gridSize: 64,
     clusterIconLayout: 'default#pieChart',
+
+    // Радиус диаграммы в пикселях.
+    clusterIconPieChartRadius: 25,
+    // Радиус центральной части макета.
+    clusterIconPieChartCoreRadius: 15,
+    // Ширина линий-разделителей секторов и внешней обводки диаграммы.
+    clusterIconPieChartStrokeWidth: 3,
+    // Определяет наличие поля balloon.
+
     clusterDisableClickZoom: false,
     geoObjectOpenBalloonOnClick: false,
     geoObjectHideIconOnBalloonOpen: false,
     geoObjectBalloonContentLayout: getDetailsContentLayout(ymaps),
   })
 
-  objectManager.clusters.options.set('preset', 'islands#greenClusterIcons')
 
   // details
   objectManager.objects.events.add('click', (event) => {
