@@ -44,6 +44,6 @@ export default function createChart(container, data, isActive) {
       },
     },
   })
-  console.log('data=', data)
+
   return chart
 }
