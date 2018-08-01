@@ -8,11 +8,11 @@ function getColor(isActive, alpha = 1) {
 
 function getLabel(el, i, data) {
   const x = new Date()
-  x.setHours(x.getHours() - data.length + i)
+  x.setHours(x.getHours() - data.length + i + 1)
   x.setMinutes(0)
   x.setSeconds(0)
   x.setMilliseconds(0)
-  return x.toString()
+  return x.getHours().toString()
 }
 
 export default function createChart(container, data, isActive) {
@@ -39,11 +39,11 @@ export default function createChart(container, data, isActive) {
         display: false,
       },
       scales: {
-        xAxes: [{ ticks: { display: false } }],
-        yAxes: [{ ticks: { beginAtZero: true, max: 0 } }],
+        xAxes: [{ ticks: { callback: label => (`${label}:00`) } }],
+        yAxes: [{ ticks: { beginAtZero: true, max: Math.max.apply(null, data) } }],
       },
     },
   })
-
+  console.log('data=', data)
   return chart
 }
