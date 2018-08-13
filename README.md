@@ -2,6 +2,11 @@
 <hr>
 <p>Код содержит ошибки разной степени критичности. Некоторые из них — стилистические, а другие — даже не позволят вам запустить приложение. Вам нужно найти все ошибки и исправить их.</p>
 <hr>
+<p><em><code>cd task-1</code></em><br>
+<em><code>yarn install</code></em><br>
+<em><code>nvm use 9</code></em> - переключаемся на node.js 9.<br>
+<em><code>yarn start</code></em><br>
+<em><code>http://localhost:9000/</code></em></p>
 <ol>
 <li>
 <p>В проект добавлен <em><code>eslint</code></em> с конфигом <em><code>airbnb</code></em>. Исправлены синтаксические ошибки.</p>
