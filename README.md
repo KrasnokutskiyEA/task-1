@@ -7,6 +7,7 @@
 <em><code>nvm use 9</code></em> - переключаемся на node.js 9.<br>
 <em><code>yarn start</code></em><br>
 <em><code>http://localhost:9000/</code></em></p>
+<hr>
 <ol>
 <li>
 <p>В проект добавлен <em><code>eslint</code></em> с конфигом <em><code>airbnb</code></em>. Исправлены синтаксические ошибки.</p>
